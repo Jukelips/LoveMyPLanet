@@ -23,17 +23,51 @@ angular.module('starter', ['ionic'])
   });
 })
 
+
+//.controller("CollecteurCtrl", function($scope)
+//{
+//	//alert("test");
+//});
+//
+.controller("HomeCtrl", function(){})
+.controller("CollecteurCtrl", function(){})
+.controller("InscriptionCtrl", function(){})
+
+
 .config(function($stateProvider, $urlRouterProvider){
 
-  $stateProvider.state('home', {
+  $stateProvider
+      
+    .state('home', {
     url:'/home',
     templateUrl: 'templates/home.html',
+    controller: 'HomeCtrl'
   })
-
-  $stateProvider.state('test', {
-    url:'/test',
-    templateUrl: 'templates/test.html',
+  .state('collecteurs', {
+    url:'/collecteurs',
+    templateUrl: 'templates/collecteurs.html',
+    controller:'CollecteurCtrl'
   })
-
+  .state('donneurs', {
+    url:'/donneurs',
+    templateUrl: 'templates/donneurs.html'
+  })
+  .state('particuliers', {
+    url:'/particuliers',
+    templateUrl: 'templates/particuliers.html'
+  })
+  .state('formCollecteurs', {
+    url:'/formCollecteurs',
+    templateUrl: 'templates/formCollecteurs.html'
+  })
+  .state('formDonneurs', {
+    url:'/formDonneurs',
+    templateUrl: 'templates/formDonneurs.html'
+  })
+  .state('inscription', {
+    url:'/inscription',
+    templateUrl: 'templates/inscription.html',
+    controller: 'InscriptionCtrl'
+  })
   $urlRouterProvider.otherwise('/home')
 })
