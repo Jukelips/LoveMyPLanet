@@ -69,5 +69,13 @@ angular.module('starter', ['ionic'])
     templateUrl: 'templates/inscription.html',
     controller: 'InscriptionCtrl'
   })
+  .state('indexDonneurs', {
+    url:'/indexDonneurs',
+    templateUrl: 'templates/indexDonneurs.html',
+  })
+  .state('formCommerce', {
+    url:'/formCommerce',
+    templateUrl: 'templates/formCommerce.html',
+  })
   $urlRouterProvider.otherwise('/home')
 })
