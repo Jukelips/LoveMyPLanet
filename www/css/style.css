@@ -2,6 +2,10 @@
 	width: 100%;
 }
 
+.icon {
+   font-size: 50px;
+}
+
 .bouton{
 	width: 40%;
 	margin-left: 5%;
