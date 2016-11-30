@@ -60,9 +60,9 @@ angular.module('starter', ['ionic'])
     url:'/formCollecteurs',
     templateUrl: 'templates/formCollecteurs.html'
   })
-  .state('formDonneurs', {
-    url:'/formDonneurs',
-    templateUrl: 'templates/formDonneurs.html'
+  .state('formRestaurants', {
+    url:'/formRestaurants',
+    templateUrl: 'templates/formRestaurants.html'
   })
   .state('inscription', {
     url:'/inscription',
@@ -76,6 +76,10 @@ angular.module('starter', ['ionic'])
   .state('formCommerce', {
     url:'/formCommerce',
     templateUrl: 'templates/formCommerce.html',
+  })
+  .state('formCafe', {
+    url:'/formCafe',
+    templateUrl: 'templates/formCafe.html',
   })
   $urlRouterProvider.otherwise('/home')
 })
