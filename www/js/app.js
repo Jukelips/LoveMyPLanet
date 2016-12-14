@@ -78,19 +78,22 @@ angular.module('starter', ['ionic', 'ngCordova'])
     url:'/formCafe',
     templateUrl: 'templates/formCafe.html',
   })
-  
   .state('map', {
     url: '/',
     templateUrl: 'templates/map.html',
     controller: 'MapCtrl'
-  });
+  })
+  .state('formParticuliers', {
+    url:'/formParticuliers',
+    templateUrl: 'templates/form/formParticuliers.html',
+  })
   $urlRouterProvider.otherwise('/home')
 })
 
 .controller("HomeCtrl", function(){})
 .controller("CollecteurCtrl", function(){})
 .controller("InscriptionCtrl", function(){})
-.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {})
+//.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {})
 
 .controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
     
@@ -98,6 +101,7 @@ angular.module('starter', ['ionic', 'ngCordova'])
  
   $cordovaGeolocation.getCurrentPosition(options).then(function(position){
  
+    //Valeur a retourné pour la position selon les paramètres
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
  
     var mapOptions = {
@@ -106,7 +110,15 @@ angular.module('starter', ['ionic', 'ngCordova'])
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
  
-    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions)
+    //var myLatLng = {lat: -25.363, lng: 131.044};
+    
+    $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions)
+    
+    $scope.marker = new google.maps.Marker({
+    position: latLng,
+    map: $scope.map
+  })
+
  
   }, function(error){
     console.log("Could not get location");
