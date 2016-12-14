@@ -47,7 +47,8 @@ angular.module('starter', ['ionic', 'ngCordova'])
   })
   .state('donneurs', {
     url:'/donneurs',
-    templateUrl: 'templates/donneurs.html'
+    templateUrl: 'templates/donneurs.html',
+    //controller: 'LoginCtrl'
   })
   .state('particuliers', {
     url:'/particuliers',
@@ -128,4 +129,21 @@ angular.module('starter', ['ionic', 'ngCordova'])
     console.log("Could not get location");
   })
 })
+
+//
+//.controller('LoginCtrl', function($scope, $state, $ionicPopup, AuthService) {
+//  $scope.data = {};
+// 
+//  $scope.login = function(data) {
+//    AuthService.login(data.email, data.password).then(function(authenticated) {
+//      $state.go('indexDonneurs', {}, {reload: true});
+//      $scope.setCurrentUsername(data.email);
+//    }, function(err) {
+//      var alertPopup = $ionicPopup.alert({
+//        title: 'Login failed!',
+//        template: 'Please check your credentials!'
+//      })
+//    })
+//  }
+//})
 
