@@ -87,6 +87,10 @@ angular.module('starter', ['ionic', 'ngCordova'])
     url:'/formParticuliers',
     templateUrl: 'templates/form/formParticuliers.html',
   })
+  .state('descRestaurant', {
+    url:'/descRestaurant',
+    templateUrl: 'templates/form/descRestaurant.html',
+  })
   $urlRouterProvider.otherwise('/home')
 })
 
